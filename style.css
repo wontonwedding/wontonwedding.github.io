@@ -12,11 +12,17 @@
 }
 
 :root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
-    --main-color: #00abf0;
+    /* BACKGROUNDS  ──────────────────────────── */
+    --bg-color:         #7E0000;   /* very-light pink */
+    --second-bg-color:  #B70000;   /* pale pink */
+
+    /* ACCENT / BRAND COLOR  ─────────────────── */
+    --main-color:       #f7a0a0;   /* the pink you already picked */
+
+    /* TEXT  (keep as-is or tweak for contrast) */
+    --text-color:       #ededed;   /* white */
 }
+
 
 html {
     font-size: 62.5%;
@@ -960,3 +966,13 @@ section:nth-child(odd) .animate.scroll,
         width: 0;
     }
 }
+
+
+/* ── Wedding hero spacing tweaks ───────────────────────── */
+.hero-line   { display:block; line-height:1.1; }
+.hero-names  { margin-bottom:0.3em; }
+.hero-date   { margin-bottom:0.3em; }   /* slightly bigger gap */
+.hero-location   { margin-top:0em;         }  /* sits just under the gap */
+
+/* If you want the block to sit a bit higher on the page: */
+.home-content    { margin-top:-30rem; }   /* adjust ± as you see fit */
