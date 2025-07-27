@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michelle &amp; Ralph | September&nbsp;6,&nbsp;2026</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #5f2d2f; /* light pink */
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      width: 100%;
+      z-index: 10;
+    }
+    .centerpiece {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+    }
+    .centerpiece img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">M&nbsp;&amp;&nbsp;R<span class="animate" style="--i:1;"></span></a>
+    <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+    <nav class="navbar">
+      <span class="active-nav"></span>
+      <span class="animate" style="--i:2;"></span>
+    </nav>
+  </header>
+
+  <div class="centerpiece">
+    <img src="images/card.gif" alt="spinning card">
+    <!-- Replace 'your-gif.gif' with your actual gif filename -->
+  </div>
+</body>
+</html>
