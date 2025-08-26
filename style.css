@@ -11,7 +11,19 @@
     scroll-behavior: smooth;
     font-family: 'Sen', sans-serif;    
 }
-
+a {
+  color: var(--main-color);    /* Or whichever color variable you want */
+  text-decoration: none;
+  transition: color .2s;      /* Optional: fade effect on hover */
+}
+a:visited {
+  color: var(--main-color);   /* Set to same or different if desired */
+}
+a:hover,
+a:active {
+  color: var(#ffffab);   /* Or any accent for hover */
+  text-decoration: underline; /* Optional: underline on hover */
+}
 
 :root {
     /* BACKGROUNDS  ──────────────────────────── */
@@ -24,6 +36,20 @@
     /* TEXT  (keep as-is or tweak for contrast) */
     --text-color:       #ededed;   /* white */
 }
+
+a {
+    color: var(--main-color);    /* Or whichever color variable you want */
+    text-decoration: none;
+    transition: color .2s;      /* Optional: fade effect on hover */
+  }
+  a:visited {
+    color: var(--main-color);   /* Set to same or different if desired */
+  }
+  a:hover,
+  a:active {
+    color: var(--text-color);   /* Or any accent for hover */
+    text-decoration: underline; /* Optional: underline on hover */
+  }
 
 
 html {
@@ -390,6 +416,37 @@ span {
     padding-bottom: 5rem;
     background-color: #8f3838;
 }
+
+/* Section background */
+#welcome {
+    position: relative; /* important */
+    background-image: url('images/newportmap2.png'); /* your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 80px 20px;
+    overflow: hidden;
+  }
+  
+  /* Overlay for transparency */
+  #welcome .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* adjust the last number for opacity */
+    z-index: 0; /* behind content */
+  }
+  
+  /* Ensure content appears above overlay */
+  #welcome .welcome-content,
+  #welcome .heading,
+  #welcome .welcome-img,
+  #welcome h3,
+  #welcome p {
+    position: relative;
+    z-index: 1; /* above overlay */
+  }
+  
 
 .map-container {
     width: 300px;
