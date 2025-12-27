@@ -404,7 +404,7 @@ span {
     flex-direction: column;
     min-height: auto;
     padding-bottom: 5rem;
-    background-color: #dba4a2;
+    background-color: #e19491;
 }
 
 .rsvpinfo {
@@ -415,6 +415,18 @@ span {
     min-height: auto;
     padding-bottom: 5rem;
     background-color: #8f3838;
+}
+
+
+.registryinfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+    background-color: #600415;
 }
 
 /* Section background */
