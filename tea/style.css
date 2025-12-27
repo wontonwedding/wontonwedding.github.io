@@ -13,14 +13,14 @@
 
 :root {
     /* BACKGROUNDS  ──────────────────────────── */
-    --bg-color:         #7E0000;   /* very-light pink */
-    --second-bg-color:  #B70000;   /* pale pink */
+    --bg-color:         #d38d8d;   /* very-light pink */
+    --second-bg-color:  #8f5555;   /* pale pink */
 
     /* ACCENT / BRAND COLOR  ─────────────────── */
     --main-color:       #ededed;   /* the pink you already picked */
 
     /* TEXT  (keep as-is or tweak for contrast) */
-    --text-color:       #7E0000;   /* white */
+    --text-color:       #0c532a;   /* white */
 }
 
 
@@ -163,7 +163,7 @@ section {
     position: relative;
     display: flex;
     justify-content: space-between;
-    width: 34.5rem;
+    width: 134.5rem;
     height: 5rem;
 }
 
@@ -172,7 +172,7 @@ section {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 15rem;
+    width: 205rem;
     height: 100%;
     background: var(--main-color);
     border: .2rem solid var(--main-color);
@@ -1037,6 +1037,17 @@ section:nth-child(odd) .animate.scroll,
     100% {
         width: 0;
     }
+}
+
+.tearsvp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+    background-color: #600415;
 }
 
 
