@@ -386,6 +386,20 @@ span {
     background: var(--second-bg-color);
 }
 
+/* Limit how wide the container can be */
+.welcome-img2 {
+    max-width: 200px;      /* pick a size you like (400–800px is typical) */
+    width: 100%;           /* let it shrink on small screens */
+    margin: 0 auto;        /* center it */
+  }
+  
+  /* Make the image scale within the container */
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
 
 .welcome {
     display: flex;
