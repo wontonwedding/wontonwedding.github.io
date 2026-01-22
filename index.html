@@ -21,6 +21,40 @@
     
 </head>
 
+<script>
+  // Set the target date and time
+  const targetDate = new Date("2026-09-06T17:30:00"); // change this
+  
+  function formatTimeParts(ms) {
+    const days    = Math.floor(ms / (1000 * 60 * 60 * 24));
+    const hours   = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+    return { days, hours, minutes, seconds };
+  }
+  
+  function updateTimer() {
+    const now = new Date().getTime();
+    const diff = targetDate.getTime() - now; // >0 before, <0 after
+  
+    const el = document.getElementById("countdown");
+  
+    if (diff > 0) {
+      // COUNTDOWN
+      const { days, hours, minutes, seconds } = formatTimeParts(diff);
+      el.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    } else {
+      // COUNT UP (time since)
+      const elapsed = Math.abs(diff);
+      const { days, hours, minutes, seconds } = formatTimeParts(elapsed);
+      el.textContent = `We've been married for: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  }
+  
+  setInterval(updateTimer, 1000);
+  updateTimer();
+  </script>
+
 <body>
     <!-- ── Header ─────────────────────────────────────────────────────────────── -->
     <header class="header">
@@ -132,6 +166,9 @@
 
 
         </div>
+
+        <h3>Countdown to the Big Day!</h3>
+        <div id="countdown" style="font-size: 40px; font-weight: bold;"></div>
     </section>
 
     
@@ -173,7 +210,7 @@
               <h2>Ceremony: Lighthouse Lawn &nbsp; | &nbsp; Cocktails: Deck &nbsp; | &nbsp; Dinner & Dancing: Rose Island Ballroom <span style="--i:3;"></span></h2>
               <br> <br>
               <div style="text-align: center;">
-                <img class="responsive-img" src="images/dresscode.png" alt="" style="max-width: 65%;">
+                <img src="images/dresscode.png" alt="" style="max-width: 75%;">
                 <p></p>
               </div>
               <h2>Dress: colorful formal, but just wear anything that makes you feel fancy and confident! <br> Except white, thanks. <span style="--i:3;"></span></h2> <br> <br>
@@ -221,7 +258,7 @@
             <div class="education-column">
                 <h3 class="title">Staying</span> there<span  style="--i:5;"></span></h3>
                 <div class="education-box">
-                    <div class="education-content">
+                  <div class="education-content">
                         <div class="content">
                             <h3>Hotel Recommendations</h3>
                             <p>$$$$ - Newport Harbor Island Resort (0 min away; ceremony & reception) <br> <br> $$ - Sonesta Select Newport Middletown (~10 min away) <br> <br> *We were not able to reserve a room block for this occasion. We kindly ask that you make your own accommodation arrangements, or join the pre-booked AirBnbs. <br> <br> **As it is Labor Day weekend and hotels may book up quickly, we encourage you to secure your lodging as early as possible. </p>
@@ -229,10 +266,18 @@
                     </div>
                     <div class="education-content">
                         <div class="content">
-                            <h3>AirBnBs etc</h3>
+                            <h3>AirBnBs, vrbo, etc. </h3>
                             <p>If you have interest in coordinating with a group to book coordinated housing, use the spreadsheet <a href="https://docs.google.com/spreadsheets/d/1dw1yrIJl5NygKOw8rl4Dkue2RgCVabcQqlXylGJI5eY/edit?usp=sharing" target="_blank" rel="noopener noreferrer"> here.</a> </p>
                         </div>
-            </div>
+                      </div>
+                <div class="education-content">
+                  <div class="content">
+                      <h3> Getting the cost of lodging down</h3>
+                      <p> Stay Friday & Saturday in Providence/Kingstown/anywhere else in RI if you come early, and stay in Newport Sunday night (wedding day) to party late. <br> 
+                      
+                      <br> Book in large groups and find houses in Middletown, RI.</p>
+                  </div>
+          </div>
         </div>
     </section>
 
@@ -240,7 +285,9 @@
      <section class="registryinfo" id="gifts">
       <h2 class="heading">Gifts & Registry<span style="--i:1;"></span></h2>
       <div class="welcome-content">
-        <h3><span style="--i:3;"></span><br>The gift of your company is always enough. (Truly.) We can't wait to see you! <br><br> If you'd like to share a card from home, envelopes, or some life advice, we'll have a box at the reception. And for those still insistent, we also registered through  <a href="https://withjoy.com/wontonwedding" target="_blank">WithJoy</a>  and <a href="https://www.cb2.com/gift-registry/michelle-wong-and-ralph-lawton/r7387955?srsltid=AfmBOopEfy-QfEEYmZ2ZBvtB_TnBFi4rGFuHa_5zSty7Sq9tVTSKGFps target="_blank">CB2</a>. </h3>
+        <h3><span style="--i:3;"></span><br>The gift of your company is always enough. (Truly.) We can't wait to see you! <br>
+          <br> If you'd like to share a postcard from home, envelopes, or life advice, we will have a box at the reception.
+           And for those still insistent, we also registered through  <a href="https://withjoy.com/wontonwedding" target="_blank">WithJoy</a>  and <a href="https://www.cb2.com/gift-registry/michelle-wong-and-ralph-lawton/r7387955?srsltid=AfmBOopEfy-QfEEYmZ2ZBvtB_TnBFi4rGFuHa_5zSty7Sq9tVTSKGFps target="_blank">CB2</a>. </h3>
   <p>
   
   </p>
@@ -271,7 +318,12 @@
       
           <div class="faq-item">
             <h3><br>When do I have to RSVP by?</h3>
-            <p>If you’re a family member or family friend, we ask that you please RSVP at <a href="https://wonton.wedding/#rsvp" target="_blank">wonton.wedding/#rsvp</a> by January 1, 2026. <br> We understand that this date is well in advance just for the interest of planning. If you can’t commit either way by then, please send us a text/Whatsapp/Viber/email <a href="mailto:mich.and.ralph@gmail.com">mich.and.ralph@gmail.com</a> — we totally understand!</p>
+            <p>We ask that you please RSVP at <a href="https://wonton.wedding/#rsvp" target="_blank">wonton.wedding/#rsvp</a> by March 1, 2026, unless your invite says otherwise. <br> We understand that this date is well in advance just for the interest of planning. If you can’t commit either way by then, please send us a text/Whatsapp/Viber/email <a href="mailto:mich.and.ralph@gmail.com">mich.and.ralph@gmail.com</a> — we totally understand!</p>
+          </div>
+
+          <div class="faq-item">
+            <h3><br>Can I bring a plus one?</h3>
+            <p> Check your invitation! It has all the named guests in your party. (We're so sorry if we can't accomdoate someone special to you at this time.) </p>
           </div>
 
           <div class="faq-item">
@@ -282,6 +334,11 @@
           <div class="faq-item">
             <h3><br>What’s the schedule? <br> Will you have events the day before and after? <br> Parking? Hotels? Registry? Partiful? <br> </h3>
             <p>We’re still finalizing the details! Check back soon!</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Anything else?</h3>
+            <p> Stay awhile. Open bar. Irish exit. Love you guys :) </p>
           </div>
       
         </div>
