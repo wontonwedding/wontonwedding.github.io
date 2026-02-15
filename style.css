@@ -134,9 +134,10 @@ section {
 .home-content h1 {
     position: relative;
     display: inline-block;
-    font-size: 7.12rem; /* change here */
+    font-size: clamp(3rem, 10.5vw, 7.12rem);
     font-weight: 1000;
     line-height: 0.9;
+    white-space: nowrap;
 }
 
 .home-content h1 span {
